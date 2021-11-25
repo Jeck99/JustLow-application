@@ -8,14 +8,14 @@ const Firm = new Schema({
     phone_number: { type: Number, require },
     image: String,
     rating: Number,
-    cases: {
+    cases: [{
         type: mongoose.Types.ObjectId,
         ref: "cases"
-    },
-    lawyers: {
+    }],
+    lawyers: [{
         type: mongoose.Types.ObjectId,
         ref: "lawyer"
-    }
+    }]
 },
     {
         timestamps: true

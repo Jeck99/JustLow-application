@@ -30,6 +30,7 @@ export default function CaseCard(props) {
                 })
         }
     }
+    
     function caseDetails() {
         getCaseByName(caseName)
             .then((res) => {

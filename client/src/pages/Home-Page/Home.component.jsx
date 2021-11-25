@@ -1,74 +1,33 @@
+import { Dialog } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
-import { getAllLawers, getLawerByName } from "../../service/lawers-service.service";
-import {CaseCard} from "../../components";
 import './home.css';
-export default function Home(props) {
-    const [lawers, setLawers] = useState([]);
-    const [paramInput, setParamInput] = useState("");
-    const [sortMethod, setSortMethod] = useState("date");
-    const [searchMethod, setSearchMethod] = useState("lawerName");
-    useEffect(getLawers, [])
 
-    function getLawers() {
-        getAllLawers().then((res) => { setLawers(res) })
-    }
-    function sortLawersClick() {
-        switch (sortMethod) {
-            case "lawerName":
-                setLawers(() => { return sortLawers("lawerName") });
-                console.log();
-                break;
-            case "rating":
-                // setLawers(()=>{return sortLawers("rating")});
-                break;
-            case "date":
-                setLawers(() => { return sortLawers("date") });
-                break;
-            default:
-                break;
-        }
-    }
-    function sortLawers(field) {
-        return lawers.sort((a, b) => {
-            return a[field].toLowerCase() - b[field].toLowerCase();
-        })
-    }
-    function serchLawersClick(e) {
-        setParamInput(e.target.value)
-        if(e.target.value.length==0) return getLawers();
-        searchMethod == "lawerName" ? getLawerByName(e.target.value).then((res) => { setLawers(res) }) : console.log(getMax());
-    }
-    function getMax() {
-        let maxObject = lawers[0];
-        for (const item of lawers) {
-            if (item[searchMethod] > maxObject[searchMethod]) maxObject = item;
-        }
-        return maxObject;
-    }
+export default function Home(props) {
+    const [logSign, setLogSign] = useState(false);
     return (
-        <>
-            <div id="sorting">
-                <button onClick={sortLawersClick}>SORT</button>
-                <select id="sort_select" onChange={(e) => { setSortMethod(e.target.value) }}>
-                    <option value="lawerName">Name</option>
-                    <option value="rating">Rating</option>
-                    <option value="date">Added At</option>
-                </select>
-            </div>
-            <div id="serch-div">
-                <button onClick={serchLawersClick}>SEARCH</button>
-                <select id="sort_select" onChange={(e) => { setSearchMethod(e.target.value) }}>
-                    <option value="lawerName">Lawer by Name</option>
-                    <option value="rating">Best Lawer</option>
-                    <option value="date">Last Lawer Added</option>
-                </select>
-                <input type="text" onChange={serchLawersClick} />
-            </div>
-            <div id={"homeDiv"}>
-                {lawers ? React.Children.toArray(lawers.map((item) => {
-                    return <CaseCard lawerItem={item} />
-                })) : ''}
-            </div>
-        </>
-    )
+        <section>
+            <button onClick={() => setLogSign(true)}>הרשם\התחבר</button>
+            <Dialog
+                fullWidth
+                maxWidth="md"
+                open={logSign}
+                onClose={() => setLogSign(false)}
+            >
+                <article>
+                    <h1><center>ברוכות וברוכים הבאים</center></h1>
+                    <h1><center>אני</center></h1>
+                </article>
+                <section className="options">
+                    <article >
+                        <img src="https://media.istockphoto.com/photos/hand-sign-approved-business-contract-closeup-picture-id1190179906?b=1&k=20&m=1190179906&s=170667a&w=0&h=ydlVuygt4VcI6MJiv_Zf5vq-IG5cIXBWwZetXRR3JZY=" alt="" />
+                        <h3>מייצג נפגע</h3>
+                    </article>
+                    <article>
+                        <img src="https://cdn.pixabay.com/photo/2020/03/08/23/45/businessman-4914044__340.jpg" alt="" />
+                        <h3>עורך דין</h3>
+                    </article>
+                </section>
+            </Dialog>
+        </section>
+    );
 }

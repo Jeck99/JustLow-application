@@ -23,7 +23,7 @@ app.listen(PORT, () => {
 
 // 
 app.use(passport.initialize());
-app.use('/movies', lawerRouter);
+app.use('/lawyers', lawerRouter);
 app.use('/orgs', orgRouter);
 app.use('/users', userRouter);
 app.use('/cases', caseRouter);
