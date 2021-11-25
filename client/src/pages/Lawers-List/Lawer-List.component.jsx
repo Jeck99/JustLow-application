@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import CostumeTable from "../components/table.component";
-import {getAllMovies} from "../service/movies-service";
+import {CostumeTable} from "../../components";
+import {getAllLawers} from "../../service/lawers-service.service";
 
-export default function MoviesList(props) {
-    const [movies, setMovies] = useState([]);
-    useEffect(getMovies, [])
+export default function LawersList(props) {
+    const [lawers, setLawers] = useState([]);
+    useEffect(getLawers, [])
 
-    function getMovies() {
-        getAllMovies().then((res) => { setMovies(res) })
+    function getLawers() {
+        getAllLawers().then((res) => { setLawers(res) })
     }
 
     const tableColumns = [
@@ -20,8 +20,8 @@ export default function MoviesList(props) {
             },
         },
         {
-            name: "movieName",
-            label: "Movie Name",
+            name: "lawerName",
+            label: "Lawer Name",
             options: {
                 filter: true,
                 sort: true
@@ -42,7 +42,7 @@ export default function MoviesList(props) {
             },
         },
         {
-            name: "linkToMovie",
+            name: "linkToLawer",
             label: "Link",
             options: {
                 sort: true
@@ -68,7 +68,7 @@ export default function MoviesList(props) {
     ]
     return (
         <div>
-            <CostumeTable data={movies} columns={tableColumns} title={"Movies Data"} />
+            <CostumeTable data={lawers} columns={tableColumns} title={"Lawers Data"} />
         </div>
     )
 }

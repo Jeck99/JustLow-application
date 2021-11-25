@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
-import { registerUser } from "../redux/actions/authActions";
+import { registerUser } from "../../redux/actions/authActions";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 
 const mapStateToProps = state => ({

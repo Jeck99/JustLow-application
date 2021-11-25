@@ -1,4 +1,3 @@
-// import MoviesRouter from './Router';
 import { BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 
@@ -11,9 +10,8 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { setCurrentUser, logoutUser } from "./redux/actions/authActions";
 
-import MoviesRouter from "./Router";
-import HeaderComponent from "./components/header.component";
-import Footer from './components/footer';
+import LawersRouter from "./App-Router/Router";
+import {Footer,HeaderComponent} from './components';
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -43,7 +41,7 @@ function App() {
       <Provider store={store}>
         <Router>
         <HeaderComponent />
-          <MoviesRouter />
+          <LawersRouter />
         <Footer />
         </Router>
       </Provider>

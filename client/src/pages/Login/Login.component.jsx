@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { loginUser } from "../redux/actions/authActions";
+import { loginUser } from "../../redux/actions/authActions";
 import { withRouter } from 'react-router';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 

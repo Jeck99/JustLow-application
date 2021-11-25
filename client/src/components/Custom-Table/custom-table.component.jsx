@@ -1,6 +1,6 @@
 import React from "react";
 import MUIDataTable from "mui-datatables";
-import { removeMovie } from "../service/movies-service";
+// import { removeMovie } from "../../service/movies-service";
 
 import {
     createTheme ,
@@ -10,14 +10,14 @@ import {
 
 export default function CostumeTable(props) {
     const { data, title, columns } = props;
-    function deleteMovie(RowsDeleted, data) {
-        const ids = RowsDeleted.data.map(d => d.dataIndex);
-        console.log(data, ids);
-        // removeMovie(params._id).then(res => alert(res))
-    }
+    // function deleteMovie(RowsDeleted, data) {
+    //     const ids = RowsDeleted.data.map(d => d.dataIndex);
+    //     console.log(data, ids);
+    //     // removeMovie(params._id).then(res => alert(res))
+    // }
     const options = {
         filterType: "checkbox",
-        onRowsDelete: deleteMovie
+        // onRowsDelete: deleteMovie
     }
     const getMuiTheme = createTheme ({
             overrides: {

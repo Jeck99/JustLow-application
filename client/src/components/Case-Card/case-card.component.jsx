@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { getMovieByName, removeMovie } from "../service/movies-service";
+import { getCaseByName, removeCase } from "../../service/case-service.service";
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
@@ -18,20 +18,20 @@ const useStyles = makeStyles({
         height: 140,
     },
 });
-export default function MovieCard(props) {
+export default function CaseCard(props) {
     const classes = useStyles();
-    const { _id, image, movieName, rating, synopsis, date } = props.movieItem;
-    function deleteMovie() {
-        if (window.confirm('Are you sure you want to REMOVE this movie?')) {
-            removeMovie(_id)
+    const { _id, image, caseName, rating, synopsis, date } = props.caseItem;
+    function deleteCase() {
+        if (window.confirm('Are you sure you want to REMOVE this case?')) {
+            removeCase(_id)
                 .then((res) => {
                     alert(res.message);
                     window.location.reload(false)
                 })
         }
     }
-    function movieDetails() {
-        getMovieByName(movieName)
+    function caseDetails() {
+        getCaseByName(caseName)
             .then((res) => {
                 window.location.replace()
             })
@@ -46,7 +46,7 @@ export default function MovieCard(props) {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {movieName}
+                        {caseName}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {rating}
@@ -58,12 +58,12 @@ export default function MovieCard(props) {
                     Share
                 </Button>
                 <Button size="small" color="primary">
-                    <Link to={`/movie-detalis/${_id}`}>Learn More</Link>
+                    <Link to={`/case-detalis/${_id}`}>Learn More</Link>
                 </Button>
                 <Button size="small" color="primary">
-                    <Link to={`/edit-movie/${_id}`}>Edit</Link>
+                    <Link to={`/edit-case/${_id}`}>Edit</Link>
                 </Button>
-                <Button onClick={deleteMovie} size="small" color="secondary">
+                <Button onClick={deleteCase} size="small" color="secondary">
                     Delete
                 </Button>
             </CardActions>
