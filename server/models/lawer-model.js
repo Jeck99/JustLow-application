@@ -10,7 +10,7 @@ const Lawer = new Schema({
     rating: Number,
     cases: {
         type: mongoose.Types.ObjectId,
-        ref: "case"
+        ref: "cases"
     },
     firm: {
         type: mongoose.Types.ObjectId,

@@ -6,7 +6,11 @@ const Oragniztion = new Schema({
     email: { type: String, require },
     phone_number: { type: Number, require },
     image: String,
-    rating: Number
+    rating: Number,
+    cases: {
+        type: mongoose.Types.ObjectId,
+        ref: "cases"
+    }
 },
     { timestamps: true }
 )

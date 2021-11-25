@@ -18,6 +18,10 @@ const User = new Schema({
         type: Date,
         default: Date.now
     },
+    cases: {
+        type: mongoose.Types.ObjectId,
+        ref: "cases"
+    }
 },
     { timestamps: true }
 )

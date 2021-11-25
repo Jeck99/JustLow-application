@@ -6,6 +6,7 @@ const Case = new Schema({
     description: { type: String, required: true },
     profision: { type: String, required: true },
     topics: [{ type: String, required: true }],
+    rating: Number,
     lawyer: {
         type: mongoose.Types.ObjectId,
         ref: "lawers"
@@ -13,9 +14,11 @@ const Case = new Schema({
     firm: {
         type: mongoose.Types.ObjectId,
         ref: "firm"
-    }
+    },
+    client_phone: { type: String, required: true },
+    final_summery: { type: String, required: true },
 },
     { timestamps: true }
 );
 
-module.exports = mongoose.model('case', Case);
+module.exports = mongoose.model('cases', Case);
