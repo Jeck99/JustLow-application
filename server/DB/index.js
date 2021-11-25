@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const DBConcoctionString = process.env.DB;
-mongoose.connect(DBConcoctionString,       //creating the connection to cinema db
+mongoose.connect(DBConcoctionString,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
     .then(() => console.log('MongoDB Connected...'))
-    .catch(error => {                            //error handling
+    .catch(error => { 
         console.error('Connection error', error.message)
     });
 
 const db = mongoose.connection;
 
-module.exports = db; // exporting the connection
+module.exports = db; 
