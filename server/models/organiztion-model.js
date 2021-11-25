@@ -7,10 +7,10 @@ const Oragniztion = new Schema({
     phone_number: { type: Number, require },
     image: String,
     rating: Number,
-    cases: {
+    cases: [{
         type: mongoose.Types.ObjectId,
         ref: "cases"
-    }
+    }]
 },
     { timestamps: true }
 )

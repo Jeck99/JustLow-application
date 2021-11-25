@@ -6,6 +6,18 @@ const Case = new Schema({
     description: { type: String, required: true },
     profision: { type: String, required: true },
     topics: [{ type: String, required: true }],
+    area: {
+        type: String,
+        required: true,
+        enum: ["Tel Aviv", "Hifa", "center", "south", "online"],
+    },
+    type: {
+        type: String,
+        required: true,
+        enum: ["consalting", "representation", "mediation"],
+    },
+    near_by: { type: Boolean, required: true, default: false },
+    // client_city: {type: String},
     rating: Number,
     lawyer: {
         type: mongoose.Types.ObjectId,
@@ -16,6 +28,9 @@ const Case = new Schema({
         ref: "firm"
     },
     client_phone: { type: String, required: true },
+    involved: { type: Number, required: true, default: 0 },
+    client_name: { type: String, required: true },
+    legal_process: { type: Boolean, required: true, default: false },
     final_summery: { type: String, required: true },
 },
     { timestamps: true }

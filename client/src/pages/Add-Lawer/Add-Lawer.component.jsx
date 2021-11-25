@@ -28,6 +28,7 @@ export default function AddLawer() {
         saveLawerToDb({ lawerName, rating, image, synopsis, linkToLawer })
             .then((res) => { alert(res.message) })
     }
+    
     return (
         <div>
             <form onSubmit={saveLawer}>
