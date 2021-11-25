@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Lawer = new Schema({
+const Firm = new Schema({
     first_name: { type: String, require },
     last_name: { type: String, require },
     email: { type: String, require },
@@ -12,11 +12,14 @@ const Lawer = new Schema({
         type: mongoose.Types.ObjectId,
         ref: "case"
     },
-    firm: {
+    lawyers: {
         type: mongoose.Types.ObjectId,
-        ref: "firm"
+        ref: "lawyer"
     }
 },
-    { timestamps: true }
-)
-module.exports = mongoose.model('lawers', Lawer);
+    {
+        timestamps: true
+    }
+);
+
+module.exports = mongoose.model('firms', Firm);

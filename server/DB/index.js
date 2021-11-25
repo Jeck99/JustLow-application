@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const DBConcoctionString = process.env.DB;
+
 mongoose.connect(DBConcoctionString,
     {
         useNewUrlParser: true,
