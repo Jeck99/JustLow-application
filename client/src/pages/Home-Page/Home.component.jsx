@@ -26,7 +26,7 @@ export default function Home(props) {
                             <h3>מייצג נפגע</h3>
                         </article>
                     </Link>
-                    <Link to='/register/2'>
+                    <Link to='/add-case'>
                         <article>
                             <img src="https://cdn.pixabay.com/photo/2020/03/08/23/45/businessman-4914044__340.jpg" alt="" />
                             <h3>עורך דין</h3>
