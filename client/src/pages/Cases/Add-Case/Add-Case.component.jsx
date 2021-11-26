@@ -115,7 +115,7 @@ export default function AddCase() {
                                 </div>
                             </article>
                             <article style={{ display: "flex" }}>
-                                <h3>העדפה מגדריצ</h3>
+                                <h3>העדפה מגדרית</h3>
                                 <div className="areaOptions">
                                     {genders.map((gender, i) =>
                                         <button type="button" key={i} onClick={() => {
