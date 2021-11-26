@@ -3,9 +3,9 @@ import { saveCaseToDb } from "../../../service/case-service.service";
 import "./Add-case.css";
 
 export default function AddCase() {
-    const formDat = {};
+    const formDat = { topics: [] };
     const [step, setStep] = useState(1);
-    const [subI, setSubI] = useState(0);
+    const [subI, setSubI] = useState(false);
     //* change handler of the form
     const changeHandler = (e) => {
         formDat[e.target.name] = e.target.value;
@@ -36,11 +36,24 @@ export default function AddCase() {
                         <h1>מה הצרכים שלי?</h1>
                         <div className="needs" style={{ marginBottom: "10px" }}>
                             {needs.map((need, i) =>
-                                <button onClick={(e) => {
-                                    setSubI(i);
-                                    changeHandler(e);
+                                <button type="button" onClick={(e) => {
+                                    setSubI(need);
+                                    formDat["topics"].push(need.main);
                                 }}>{need.main}</button>
                             )}
+                            <br />
+                            {subI ?
+                                <select name="" id="" style={{ width: "70px" }}
+                                    onChange={(e) => formDat.topics.push(e.target.value)}
+                                >
+                                    {
+                                        subI.sub.map((sub, i) =>
+                                            <option value={sub} style={{ width: "70px" }}>
+                                                {sub}
+                                            </option>)
+                                    }
+                                </select>
+                                : ""}
                         </div>
                         <p>כתבו את הגדרת הנושא בצורה הברורה ביותר, האלוגריתם שלנו מפלטר את מילות המקרה במטרה למצא את החיבור הטוב ביותר
                         </p>
@@ -53,7 +66,7 @@ export default function AddCase() {
                             <br />
 
                         </div>
-                        <button onClick={() => setStep(step + 1)}>הבא</button>
+                        <button type="button" onClick={() => setStep(step + 1)}>הבא</button>
                     </div>
                     : step === 2 ?
                         <div className="step stepTwo">
@@ -75,8 +88,8 @@ export default function AddCase() {
                             </ol>
 
                             <div className="controllers">
-                                <button onClick={() => setStep(step + -1)}>הקודם</button>
-                                <button onClick={() => setStep(step + 1)}>הבא</button>
+                                <button type="button" onClick={() => setStep(step + -1)}>הקודם</button>
+                                <button type="button" onClick={() => setStep(step + 1)}>הבא</button>
                             </div>
                         </div> :
                         <div className="step stepThree">
@@ -85,7 +98,7 @@ export default function AddCase() {
                                 <h3>שפה</h3>
                                 <div className="langOptions">
                                     {langs.map((lang, i) =>
-                                        <button key={i} onClick={() => {
+                                        <button type="button" key={i} onClick={() => {
                                             formDat["lang"] = lang;
                                         }}>{lang}</button>
                                     )}
@@ -95,7 +108,7 @@ export default function AddCase() {
                                 <h3>אזור מגורים</h3>
                                 <div className="areaOptions">
                                     {areas.map((area, i) =>
-                                        <button key={i} onClick={() => {
+                                        <button type="button" key={i} onClick={() => {
                                             formDat["area"] = area;
                                         }}>{area}</button>
                                     )}
@@ -105,21 +118,21 @@ export default function AddCase() {
                                 <h3>העדפה מגדריצ</h3>
                                 <div className="areaOptions">
                                     {genders.map((gender, i) =>
-                                        <button key={i} onClick={() => {
+                                        <button type="button" key={i} onClick={() => {
                                             formDat["gender"] = gender;
                                         }}>{gender}</button>
                                     )}
                                 </div>
                             </article>
                             <div>
-                                <button onClick={() => setStep(step + -1)}>הקודם</button>
+                                <button type="button" onClick={() => setStep(step + -1)}>הקודם</button>
                                 <button type="submit">העלה</button>
                             </div>
                         </div>
                 }
-            </form>
+            </form >
             <div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -61,6 +61,7 @@ function HeaderComponent(props) {
                             :
                             <React.Fragment>
                                 <Link to='/home'>דף הבית</Link>
+                                <Link to='/add-case'>פתיחת תיק</Link>
                                 <Link to='/register/2' color="inherit">רישום עו"ד</Link>
                                 <Link to='/register/1' color="inherit"> רישום ארגון</Link>
                                 <Link to='/login' color="inherit">התחברות</Link>

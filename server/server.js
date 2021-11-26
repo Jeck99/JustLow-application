@@ -22,12 +22,12 @@ app.listen(PORT, () => {
 });
 
 // 
-app.use(passport.initialize());
 app.use('/lawyers', lawerRouter);
 app.use('/orgs', orgRouter);
 app.use('/users', userRouter);
 app.use('/cases', caseRouter);
 app.use('/firms', firmRouter);
+app.use(passport.initialize());
 
 //*****************************************************************/
 if (process.env.NODE_ENV === 'production') {
