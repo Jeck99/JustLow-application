@@ -42,7 +42,7 @@ function App() {
         <Router>
         <HeaderComponent />
           <LawersRouter />
-        <Footer />
+        {/* <Footer /> */}
         </Router>
       </Provider>
     </div>

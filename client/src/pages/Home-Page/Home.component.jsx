@@ -7,8 +7,8 @@ export default function Home(props) {
     const [logSign, setLogSign] = useState(false);
     return (
         <section className="main-section">
-            <img src="pictures/JustLaw.jpg" alt=""/>
             <button onClick={() => setLogSign(true)}>הרשם\התחבר</button>
+            <img src="pictures/JustLaw.jpg" alt=""/>
             <Dialog
                 fullWidth
                 maxWidth="md"
