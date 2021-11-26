@@ -1,11 +1,11 @@
-const lawersRouter = require('express').Router() //import from Router from express
-const caseCtrl = require('../controllers/case-ctrl') //import functions from lawer-ctrl
+const casesRouter = require('express').Router() //import from Router from express
+const caseCtrl = require('../controllers/case-ctrl') //import functions from case-ctrl
 
-lawersRouter.get('/all', caseCtrl.getAllCases);                  //get all lawers
-lawersRouter.post('/saveLawer', caseCtrl.saveNewCase)           //save new lawer
-lawersRouter.get('/lawer/:id', caseCtrl.getCaseById)           //get lawer by id
-lawersRouter.get('/lawer/searchByName/:lawerName', caseCtrl.getCasesByName)//get lawers by name
-lawersRouter.delete('/lawer/:id', caseCtrl.deleteCase)       //delete a lawer by id
-lawersRouter.put('/lawer/:id', caseCtrl.updateCase)         //update a lawer by id
+casesRouter.get('/all', caseCtrl.getAllCases);                  //get all cases
+casesRouter.post('/saveCase', caseCtrl.saveNewCase)           //save new case
+casesRouter.get('/case/:id', caseCtrl.getCaseById)           //get case by id
+casesRouter.get('/case/searchByName/:caseName', caseCtrl.getCasesByName)//get cases by name
+casesRouter.delete('/case/:id', caseCtrl.deleteCase)       //delete a case by id
+casesRouter.put('/case/:id', caseCtrl.updateCase)         //update a case by id
 
-module.exports = lawersRouter; //exporting lawerRouter module
+module.exports = casesRouter; //exporting caseRouter module

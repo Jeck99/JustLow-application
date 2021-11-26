@@ -58,7 +58,7 @@ export async function saveCaseToDb(caseObjToSave) {
     };
     
     try {
-        return await fetch(`${API}/cases`,options)
+        return await fetch(`${API}/cases/saveCase`,options)
             .then((res) => { return res.json() })
     } catch (error) {
         console.log(error);
