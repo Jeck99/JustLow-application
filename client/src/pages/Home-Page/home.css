@@ -20,5 +20,13 @@
     width: 300px;
     height: 300px;
     border-radius: 20px;
+<<<<<<< HEAD
 
+=======
+}
+img{
+    /* background: url("pictures/JustLaw.jpg"); */
+    width: 100vw;
+    height: 100vh;
+>>>>>>> 4b7ea1c82de925b1baaf2e8c1914ef7285aec3db
 }

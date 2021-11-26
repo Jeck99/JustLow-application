@@ -54,14 +54,15 @@ function HeaderComponent(props) {
                         props.auth.isAuthenticated ?
                             <React.Fragment>
                                 <span>{name} : {email}</span>
-                                <Link to='/home'>Home</Link>
                                 <Link to='/add-case'>NEW</Link>
                                 <Link to='/cases'>Cases</Link>
                                 <button onClick={onLogoutClick}>Log Out</button>
                             </React.Fragment>
                             :
                             <React.Fragment>
-                                <Link to='/register' color="inherit">register</Link>
+                                <Link to='/home'>Home</Link>
+                                <Link to='/register/2' color="inherit">register lawer</Link>
+                                <Link to='/register/1' color="inherit">register organiztion</Link>
                                 <Link to='/' color="inherit">Login</Link>
                             </React.Fragment>
 

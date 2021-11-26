@@ -10,7 +10,7 @@ export default function LawersRouter() {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
+                <Route exact path="/register/:role" component={Register} />
                 <Route exact path="/add-case" component={AddCase} />
                 <PrivateRoute exact path="/home" component={Home} />
                 <PrivateRoute exact path="/lawers" component={LawersList} />

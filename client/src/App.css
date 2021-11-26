@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
-
+a{
+  color: white;
+}
+a:visited{
+  color: white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
