@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const Lawer = new Schema({
     full_name: { type: String, required: true },
     email: { type: String, require },
+    role: { type: Number, require },
     password: { type: String, required: true },
     experties: {
         type: String,

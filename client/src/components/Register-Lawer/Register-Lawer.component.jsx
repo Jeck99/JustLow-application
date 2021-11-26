@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import { registerUser } from "../../redux/actions/authActions";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBInput } from 'mdbreact';
 
 const mapStateToProps = state => ({
     auth: state.auth,
     errors: state.errors
 });
-
 
 
 const RegisterLawer = (props) => {
@@ -56,6 +55,9 @@ const RegisterLawer = (props) => {
     };
     const onGenderChange = e => {
         setGender(e.target.value);
+    };
+    const onFirmChange = e => {
+        setFirm(e.target.value);
     };
     const onExpertiseChange = e => {
         setExpertise(e.target.value);
@@ -124,7 +126,7 @@ const RegisterLawer = (props) => {
                                     id="name"
                                     require />
                                 <MDBInput label="firm" icon="user" group type="text" validate error="wrong"
-                                    success="right" onChange={onGenderChange}
+                                    success="right" onChange={onFirmChange}
                                     value={firm}
                                     error={errors.name}
                                     id="name"

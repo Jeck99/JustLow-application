@@ -5,6 +5,7 @@ const Case = new Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     profision: { type: String, required: true },
+    role: { type: Number, required: true },
     topics: [{ type: String, required: true }],
     area: {
         type: String,
