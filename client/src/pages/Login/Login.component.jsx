@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
 function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('');
     const [errors, setErrors] = useState({});
     const [user, setUser] = useState({});
 
@@ -29,11 +30,15 @@ function Login(props) {
     const onPasswordChange = e => {
         setPassword(e.target.value);
     };
+    const onRoleChange = e => {
+        setRole(e.target.value);
+    };
     const onSubmit = e => {
         e.preventDefault();
         const userData = {
-            email: email,
-            password: password
+            email,
+            password,
+            role
         };
         props.loginUser(userData, props.history);
     };
@@ -67,6 +72,13 @@ function Login(props) {
                                 value={password}
                                 error={errors.password}
                                 id="password" />
+                        </div>
+                        <div className="input-field col s12">
+                            התחבר כ:
+                            <select onChange={onPasswordChange}  value={password}>
+                                <option value="1">ארגון</option>
+                                <option value="2">עורך דין</option>
+                                </select>
                         </div>
                         <button> Login</button>
                     </form>
