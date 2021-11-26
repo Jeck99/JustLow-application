@@ -22,8 +22,15 @@
     border-radius: 20px;
 
 }
-img{
+#img-cover{
     /* background: url("pictures/JustLaw.jpg"); */
     width: 100vw;
     height: 100vh;
+    z-index: -1;
+    position: sticky;
+}
+#si-log-btn:hover{
+    width: 15vw;
+    height: 8vh;
+    box-shadow: 4px 4px 7px black;
 }

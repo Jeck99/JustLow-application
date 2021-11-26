@@ -45,10 +45,10 @@ function HeaderComponent(props) {
         <div>
             <AppBar position="static">
                 <Toolbar className={classes.root}>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                   {/*  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>JustApp App</Typography>
+                    <Typography variant="h6" className={classes.title}>JustApp App</Typography> */}
 
                     {
                         props.auth.isAuthenticated ?
@@ -60,11 +60,11 @@ function HeaderComponent(props) {
                             </React.Fragment>
                             :
                             <React.Fragment>
-                                <Link to='/home'>דף הבית</Link>
-                                <Link to='/add-case'>פתיחת תיק</Link>
-                                <Link to='/register/2' color="inherit">רישום עו"ד</Link>
-                                <Link to='/register/1' color="inherit"> רישום ארגון</Link>
-                                <Link to='/login' color="inherit">התחברות</Link>
+                                <Link to='/home'><Typography variant="h6" className={classes.title}>JustApp App</Typography></Link>
+                                <Link to='/add-case'><Typography variant="h6" className={classes.title}>פתיחת תיק</Typography></Link>
+                                <Link to='/register/2' color="inherit"><Typography variant="h6" className={classes.title}>רישום עו"ד</Typography></Link>
+                                <Link to='/register/1' color="inherit"><Typography variant="h6" className={classes.title}> רישום ארגון</Typography></Link>
+                                <Link to='/login' color="inherit"><Typography variant="h6" className={classes.title}>התחברות</Typography></Link>
                             </React.Fragment>
 
                     }
